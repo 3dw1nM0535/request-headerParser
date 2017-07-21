@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/3dw1nM0535/request-headerParser#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "os": "^0.1.1"
   }
 }
