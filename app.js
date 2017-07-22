@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
     "Software": os.arch() + " " + os.type(),
   }
   res.json(hostDetails);
+  console.log(req.headers);
 });
 
 app.listen(3000, '127.0.0.1', () => {
