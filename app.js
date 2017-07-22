@@ -4,7 +4,11 @@ var os = require('os');
 var app = express();
 
 app.get('/', (req, res) => {
-  res.json();
+  var hostDetails = {
+    "ipaddress": req.ip,
+    "Software": os.arch() + " " + os.type(),
+  }
+  res.json(hostDetails);
 });
 
 app.listen(3000, '127.0.0.1', () => {
