@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   var osName = parser(req.get('user-agent')).os.name;
   var osVersion = parser(req.get('user-agent')).os.version;
   var hostDetails = {
-    "ipaddress": req.ip,
+    "ipaddress": req.connection.remoteAddress || req.headers['x-forwaded-for'] || req.connection.socket.remoteAddress || req.socket.remoteAddress,
     "Software": osVersion + ' ' + osName,
     "language": req.get('accept-language').split(',')[0],
   }
